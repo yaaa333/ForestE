@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        header{
+            display: flex;
+            justify-content: space-between;
+        }
+        .main {
+            
+            /* 把logo跟漢堡變兩邊放 */
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #6af;
+            position: relative;
+        }
+
+        .hb label {
+            width: 40px;
+            height: 40px;
+            background-color: #000;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        .hb span {
+            width: 80%;
+            height: 3px;
+            background-color: rgb(0, 255, 0);
+        }
+
+        nav {
+            /* 選單定位父層 main */
+            position: absolute;
+            width: 90%;
+            margin: 0 5%;
+            background-color: rgb(132, 0, 255);
+            top: 100%;
+            left: 0;
+            /* 一樣把inline的東西變成flex做垂直排列 */
+            display: flex;
+            flex-direction: column;
+        }
+
+        nav a {
+            padding: 10px;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        /* 選單內的a  */
+        nav a+a {
+            border-top: 1px solid #291616;
+        }
+
+        #menu-switch {
+            display: none;
+        }
+
+        @media screen and (min-width:768px) {
+            .hb {
+                /* 把漢堡隱藏起來 */
+                display: none;
+            }
+
+            nav {
+                display: block;
+                margin: 0px 20px;
+                width: 110px;
+            }
+
+            nav a+a {
+                border-top: none;
+            }
+
+        }
+
+        @media screen and (max-width: 767px) {
+            nav {
+                position: absolute;
+                width: 90%;
+                margin: 0 5%;
+                top: 100%;
+                left: 0;
+                flex-direction: column;
+                display: none;
+            }
+
+
+            nav a+a {
+                border-top: 1px solid #fff;
+            }
+
+            /* 在checkbox被點擊後 .main-header的mainnav要flex */
+            #menu-switch:checked+.main nav {
+                display: flex;
+            }
+           
+        }
+
+    </style>
+</head>
+
+<body>
+<input type="checkbox" name="" id="menu-switch">
+<div class="main">
+    <header>
+        <div class="logo">
+            <a href="#">
+                <img src="https://fakeimg.pl/80x40/200">
+            </a>
+        </div>
+
+        <div class="hb">
+            <label for="menu-switch">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+        </div>
+
+        <nav>
+            <a href="about.html">關於我們</a>
+            <a href="activity.html">課程活動</a>
+            <a href="teachers.html">師資介紹</a>
+            <a href="application.html">報名資訊</a>
+            <a href="login.html">會員登入</a>
+        </nav>
+    </header>
+
+    
+
+</div>
+
+
+</body>
+
+</html>

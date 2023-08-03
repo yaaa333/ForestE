@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/33af4a72be.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <!DOCTYPE html>
+    <html>
+
+    <head>
+        <title>星星评分</title>
+        <style>
+            .fa-star {
+                color: gray;
+                /* 初始颜色为灰色 */
+                cursor: pointer;
+                /* 鼠标移动到星星时显示手型 */
+            }
+        </style>
+    </head>
+
+    <body>
+        <i class="fa-solid fa-star" onclick="rateStar(1)" onmouseover="highlightStar(1)" onmouseout="resetStars()"></i>
+        <i class="fa-solid fa-star" onclick="rateStar(2)" onmouseover="highlightStar(2)" onmouseout="resetStars()"></i>
+        <i class="fa-solid fa-star" onclick="rateStar(3)" onmouseover="highlightStar(3)" onmouseout="resetStars()"></i>
+        <i class="fa-solid fa-star" onclick="rateStar(4)" onmouseover="highlightStar(4)" onmouseout="resetStars()"></i>
+        <i class="fa-solid fa-star" onclick="rateStar(5)" onmouseover="highlightStar(5)" onmouseout="resetStars()"></i>
+
+        <script>
+            var selectedStar = 0; // 记录当前点击的星星数量
+
+            function rateStar(num) {
+                selectedStar = num; // 更新当前点击的星星数量
+                var stars = document.querySelectorAll('.fa-star');
+                for (var i = 0; i < stars.length; i++) {
+                    if (i < num) {
+                        stars[i].style.color = '#ffaa00'; // 将当前及之前的星星变成蓝色
+                    } else {
+                        stars[i].style.color = 'gray'; // 将剩余的星星变回灰色
+                    }
+                }
+            }
+
+            function highlightStar(num) {
+                if (selectedStar === 0) { // 只有在没有点击过星星时才会变色
+                    var stars = document.querySelectorAll('.fa-star');
+                    for (var i = 0; i < stars.length; i++) {
+                        if (i < num) {
+                            stars[i].style.color = '#ffaa00'; // 将当前及之前的星星变成蓝色
+                        }
+                    }
+                }
+            }
+
+            function resetStars() {
+                if (selectedStar === 0) { // 只有在没有点击过星星时才会变色
+                    var stars = document.querySelectorAll('.fa-star');
+                    for (var i = 0; i < stars.length; i++) {
+                        stars[i].style.color = 'gray'; // 将所有星星恢复成灰色
+                    }
+                }
+            }
+
+
+
+
+            window.addEventListener("load", init, false);
+        </script>
+    </body>
+
+    </html>
+
+
+
+</body>
+
+</html>

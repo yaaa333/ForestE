@@ -1,29 +1,14 @@
-* {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
+@import url('headfoot.css');
 
-html {
-    background-image: url(../image/backg.jpg);
-
-
-}
-
-body{
-    font-family: 'Noto Sans TC', sans-serif;
-    font-weight: 300;
-    color: #4E4B4B;
-}
 h1{
-    font-family: 'BIZ UDPMincho', serif;
-
+    margin: 0 0 20px 0;
 }
+
 h2{
     margin: 5px 0;
 }
 
-.main-header {
+.main {
     width: 1200px;
     margin: auto;
     box-sizing: border-box;
@@ -32,45 +17,21 @@ h2{
     justify-content: center;
 }
 
-a {
-    text-decoration: none;
-    color: #75523A;
-}
-
-.logo {
-    width: 160px;
-    height: 250px;
-
-
-}
-
-.logo img {
-    width: 100%;
-    display: inline-block;
-    margin: 80px 0;
-}
-
-nav {
-    display: block;
-    margin: 0px 20px;
-    width: 110px;
-}
-
-nav a {
-    display: flex;
-    padding: 8px 20px;
-    justify-content: center;
-}
 
 .slider {
     display: flex;
     flex-direction: column;
-    margin: 120px 0 0 120px;
+    margin: 10px 0 0 120px;
+    
+}
+
+#curPos{
+    margin: 80px 0 50px 0;
 }
 
 .slider-container {
     height: 400px;
-    padding-left: 20px;
+    /* padding-left: 20px; */
     display: flex;
     align-items: center;
 
@@ -97,7 +58,6 @@ nav a {
     width: 90px;
     display: flex;
     flex-direction: column;
-
     margin-left: 20px;
 }
 
@@ -144,26 +104,27 @@ nav a {
 }
 
 .explain {
-    padding: 20px;
-    display: flex;
-
+    /* padding: 20px;
+    display: flex; */
+    
 }
 
 .fsttit {
     grid-column: 1 / span 3;
-    display: flex;
-    align-items: center;
+    grid-row: 1 / span 3;
+    /* display: flex;
+    align-items: center; */
 }
 
 .icon-group {
-    margin: 0 10px;
+    margin:  10px 0;
     display: flex;
     align-items: center;
 
 }
 
 .oneday {
-    margin: 0 10px;
+    
     display: flex;
  
       
@@ -220,6 +181,9 @@ nav a {
     background-color: #B1E392;
     border: 1px solid #D9D9D9;
 }
+ul{
+   margin-left:20px;
+}
 
 .line-short {
     position: relative;
@@ -227,7 +191,10 @@ nav a {
 
 .line-short a {
     line-height: 2;
+    display: flex;
+    text-align: start;
     color: #4E4B4B;
+    margin: 0 10px;
 }
 
 .line-short a:hover {
@@ -239,8 +206,7 @@ nav a {
     width: 4px;
     height: 20px;
     position: absolute;
-
-    left: -10px;
+    left: -1px;
     top: 5px;
     border-radius: 4px;
     background-color: #B1E392;
@@ -251,22 +217,18 @@ table {
     border-collapse: collapse;
 }
 
-th,
-td {
-
+th,td {
     padding: 8px;
     text-align: center;
 }
 
 .info-ul {
     display: block;
-
     margin-top: 0px;
     margin-left: 0;
     list-style: none;
     padding-left: 30px;
 }
-
 
 .spot {
     padding: 15px 0;
@@ -308,23 +270,18 @@ h2 {
     text-align: start;
 }
 
-
 .time-info-title {
+    width: 600px;
     display: flex;
-    align-items: center;
-
+    align-items: start;
 }
 
 .time {
+    width: 100px;
     margin: 2px 0;
-    padding-right: 10px;
+    /* padding-right: 10px; */
+    text-align: start;
 }
-
-.txt,p{
-    font-family: 'Noto Sans TC', sans-serif;
-    font-weight: 300;
-}
-
 
 .info-img {
     width: 400px;
@@ -354,16 +311,37 @@ h2 {
     border: 1px solid #84AA6D;
 }
 
-
 .location-card p {
     text-align: start;
 }
 
+#name{
+    width: 80px; 
+    height: 20px;
+}
+
+input,textarea{
+    color:#fff;
+    background-color: #84AA6D;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+button {
+    margin: 10px 0 0 250px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #84AA6D;
+    color: white;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
 
 .caution {
     width: 100%;
     border-radius: 10px;
-
     border: 1px solid #84AA6D;
 }
 
@@ -374,6 +352,15 @@ h2 {
     box-sizing: border-box;
 }
 
+textarea{
+    width: 100%;
+    border: transparent;
+    color:#fff;
+}
+
+::placeholder {
+    color: #fff;
+}
 
 .userline {
     display: flex;
@@ -391,9 +378,15 @@ h2 {
     margin-top: -30px
 }
 
+.fa-star{
+    color:gray;
+    margin: 10px 0;
+}
+
 .staricon {
     width: 20px;
     margin: 0 8px 10px 0;
+    color: #fa0;
 }
 
 .score {
@@ -401,4 +394,94 @@ h2 {
     display: flex;
 }
 
-.score p {}
+.hb label {
+    width: 40px;
+    height: 40px;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    position: relative;
+}
+
+.hb span {
+    width: 80%;
+    height: 4px;
+    background-color: #f00;
+    /* 漢堡做動畫先定位 */
+    position: absolute;
+    inset: 0;
+    margin: auto;
+}
+
+
+#menu-switch {
+    display: none;
+}
+
+/* 這裡是平板區小於767 */
+@media screen and (max-width: 767px) {
+    nav {
+        /* position: absolute; */
+        width: 90%;
+        margin: 0 5%;
+        background-color: #fa0;
+        top: 100%;
+        left: 0;
+        flex-direction: column;
+        display: none;
+    }
+
+
+    nav a+a {
+        border-top: 1px solid #fff;
+    }
+
+    /* 在checkbox被點擊後 .main-header的mainnav要flex */
+    #menu-switch:checked +.main nav {
+        display: flex;
+    }
+
+    .hb span:nth-child(1) {
+        /* 位移 */
+        translate: 0px -10px;
+        /* 角度 */
+        rotate: 0deg;
+        transition: tranlate 1s 1s,
+            rotate 1s 0s;
+    }
+
+    .hb span:nth-child(2) {
+        /* 透明度 */
+        opacity: 1;
+        transition: tranlate 1s 1s,
+                    rotate 1s 2s;
+    }
+
+    .hb span:nth-child(3) {
+        translate: 0px 10px;
+        rotate: 0deg;
+        transition: tranlate 1s 1s,
+            rotate 1s 0s;
+    }
+    }
+
+     /* 以下是桌機模式 漢堡不見 nav橫排 */
+     @media screen and (min-width: 768px) {
+        .hb {
+            display: none;
+        }
+
+        nav {
+            flex-direction: row;
+        }
+    }
+
+    /* 大於768的時候同時有觸摸這個動作 就執行 */
+    @media screen and (min-width: 768px) and (hover:hover) {
+        nav a:hover {
+            /* color: #f00; */
+        }
+    }
