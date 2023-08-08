@@ -15,7 +15,7 @@ document.head.appendChild(fontAwesomeScript);
 
 
 
-
+//大小圖輪播
 function showLarge(e) {
 
     document.getElementById("large").src = e.target.src;
@@ -31,22 +31,22 @@ function init() {
 
 
 
-var selectedStar = 0; // 记录当前点击的星星数量
+var selectedStar = 0; // 點擊的星星数量
 
 function rateStar(num) {
-    selectedStar = num; // 更新当前点击的星星数量
+    selectedStar = num; // 更新點擊的星星数量
     var stars = document.querySelectorAll('.fa-star');
     for (var i = 0; i < stars.length; i++) {
         if (i < num) {
-            stars[i].style.color = '#ffaa00'; // 将当前及之前的星星变成蓝色
+            stars[i].style.color = '#ffaa00'; //將當前跟之前的星星變黃
         } else {
-            stars[i].style.color = 'gray'; // 将剩余的星星变回灰色
+            stars[i].style.color = 'gray'; // 剩下的星星變回灰色
         }
     }
 }
 
 function highlightStar(num) {
-    if (selectedStar === 0) { // 只有在没有点击过星星时才会变色
+    if (selectedStar === 0) { // 只有在沒有點擊星星時才會變色
         var stars = document.querySelectorAll('.fa-star');
         for (var i = 0; i < stars.length; i++) {
             if (i < num) {
